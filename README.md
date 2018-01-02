@@ -23,6 +23,6 @@ Deploy with the [Container Registry and Runtime](https://devcenter.heroku.com/ar
      $ cd python-miniconda
      
      $ heroku create
-     $ heroku container:push 
+     $ heroku container:push web
 
 ✨🍰✨
