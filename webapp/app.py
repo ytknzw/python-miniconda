@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from sklearn import datasets, svm
+import sys
 
 app = Flask(__name__)
 
@@ -11,8 +12,9 @@ def hello():
     clf = svm.SVC(gamma=0.001, C=100.)
     clf.fit(digits.data[:-1], digits.target[:-1])
     prediction = clf.predict(digits.data[-1:])
+    v = sys.version
 
-    return jsonify({'prediction': repr(prediction)})
+    return jsonify({'prediction': repr(prediction), 'version': repr(v)})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
